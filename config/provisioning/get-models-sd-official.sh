@@ -2,11 +2,11 @@
 
 # This file will be sourced in init.sh
 
-# https://raw.githubusercontent.com/ai-dock/stable-diffusion-webui/main/config/provisioning/get-models-sd-official.sh
+# https://raw.githubusercontent.com/ai-dock/stable-diffusion-webui-s3mod/main/config/provisioning/get-models-sd-official.sh
 
 # Download Stable Diffusion official models
 
-models_dir=/opt/stable-diffusion-webui/models
+models_dir=/opt/stable-diffusion-webui-s3mod/models
 checkpoints_dir=${models_dir}/Stable-diffusion
 
 # v1-5-pruned-emaonly

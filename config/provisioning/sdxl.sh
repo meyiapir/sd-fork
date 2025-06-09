@@ -2,7 +2,7 @@
 # This file will be sourced in init.sh
 # Namespace functions with provisioning_
 
-# https://raw.githubusercontent.com/ai-dock/stable-diffusion-webui/main/config/provisioning/default.sh
+# https://raw.githubusercontent.com/ai-dock/stable-diffusion-webui-s3mod/main/config/provisioning/default.sh
 
 ### Edit the following arrays to suit your workflow - values must be quoted and separated by newlines or spaces.
 
@@ -23,7 +23,7 @@ EXTENSIONS=(
     #"https://github.com/deforum-art/sd-webui-deforum"
     #"https://github.com/adieyal/sd-dynamic-prompts"
     #"https://github.com/ototadana/sd-face-editor"
-    #"https://github.com/AlUlkesh/stable-diffusion-webui-images-browser"
+    #"https://github.com/AlUlkesh/stable-diffusion-webui-s3mod-images-browser"
     #"https://github.com/hako-mikan/sd-webui-regional-prompter"
     #"https://github.com/Coyote-A/ultimate-upscale-for-automatic1111"
     #"https://github.com/fkunn1326/openpose-editor"
@@ -111,7 +111,7 @@ function provisioning_start() {
     FLAGS_COMBINED="${PLATFORM_FLAGS} $(cat /etc/a1111_webui_flags.conf) ${PROVISIONING_FLAGS}"
     
     # Start and exit because webui will probably require a restart
-    cd /opt/stable-diffusion-webui && \
+    cd /opt/stable-diffusion-webui-s3mod && \
     micromamba run -n webui -e LD_PRELOAD=libtcmalloc.so python launch.py \
         ${FLAGS_COMBINED}
     provisioning_print_end
@@ -132,7 +132,7 @@ function provisioning_get_pip_packages() {
 function provisioning_get_extensions() {
     for repo in "${EXTENSIONS[@]}"; do
         dir="${repo##*/}"
-        path="/opt/stable-diffusion-webui/extensions/${dir}"
+        path="/opt/stable-diffusion-webui-s3mod/extensions/${dir}"
         requirements="${path}/requirements.txt"
         if [[ -d $path ]]; then
             if [[ ${AUTO_UPDATE,,} != "false" ]]; then

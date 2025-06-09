@@ -14,9 +14,9 @@ do
     esac
 done
 
-printf "Updating stable-diffusion-webui (${branch})...\n"
+printf "Updating stable-diffusion-webui-s3mod (${branch})...\n"
 
-cd /opt/stable-diffusion-webui
+cd /opt/stable-diffusion-webui-s3mod
 git checkout ${branch}
 git pull
 

@@ -98,7 +98,28 @@
 #8 6.603 Get:36 http://archive.ubuntu.com/ubuntu jammy/main amd64 libgl1 amd64 1.4.0-1 [110 kB]
 #8 9.933 Fetched 36.2 MB in 2s (17.2 MB/s)
 #8 10.26 Selecting previously unselected package libdrm-common.
-#8 10.26 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 24363 files and directories currently installed.)
+#8 10.26 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 24363 files and directories currently installed.)
 #8 10.42 Preparing to unpack .../00-libdrm-common_2.4.113-2~ubuntu0.22.04.1_all.deb ...
 #8 10.57 Unpacking libdrm-common (2.4.113-2~ubuntu0.22.04.1) ...
 #8 11.96 Selecting previously unselected package libdrm2:amd64.
@@ -889,7 +910,7 @@
 #8 91.57 
 #8 91.57     micromamba run -n webui mycommand
 #8 91.57 
-#8 91.62 Cloning into 'stable-diffusion-webui'...
+#8 91.62 Cloning into 'stable-diffusion-webui-s3mod'...
 #8 DONE 95.7s
 
 #9 [supervisor 4/5] COPY --chown=0:1111 ./COPY_ROOT_EXTRA/ /
@@ -904,16 +925,16 @@
 #10 2.061 Commit hash: bef51aed032c0aaa5cfd80445bc4cf0d85b408b5
 #10 2.064 Installing clip
 #10 7.054 Installing open_clip
-#10 11.72 Cloning assets into /opt/stable-diffusion-webui/repositories/stable-diffusion-webui-assets...
-#10 11.73 Cloning into '/opt/stable-diffusion-webui/repositories/stable-diffusion-webui-assets'...
-#10 12.42 Cloning Stable Diffusion into /opt/stable-diffusion-webui/repositories/stable-diffusion-stability-ai...
-#10 12.44 Cloning into '/opt/stable-diffusion-webui/repositories/stable-diffusion-stability-ai'...
-#10 18.18 Cloning Stable Diffusion XL into /opt/stable-diffusion-webui/repositories/generative-models...
-#10 18.19 Cloning into '/opt/stable-diffusion-webui/repositories/generative-models'...
-#10 26.15 Cloning K-diffusion into /opt/stable-diffusion-webui/repositories/k-diffusion...
-#10 26.16 Cloning into '/opt/stable-diffusion-webui/repositories/k-diffusion'...
-#10 27.12 Cloning BLIP into /opt/stable-diffusion-webui/repositories/BLIP...
-#10 27.13 Cloning into '/opt/stable-diffusion-webui/repositories/BLIP'...
+#10 11.72 Cloning assets into /opt/stable-diffusion-webui-s3mod/repositories/stable-diffusion-webui-s3mod-assets...
+#10 11.73 Cloning into '/opt/stable-diffusion-webui-s3mod/repositories/stable-diffusion-webui-s3mod-assets'...
+#10 12.42 Cloning Stable Diffusion into /opt/stable-diffusion-webui-s3mod/repositories/stable-diffusion-stability-ai...
+#10 12.44 Cloning into '/opt/stable-diffusion-webui-s3mod/repositories/stable-diffusion-stability-ai'...
+#10 18.18 Cloning Stable Diffusion XL into /opt/stable-diffusion-webui-s3mod/repositories/generative-models...
+#10 18.19 Cloning into '/opt/stable-diffusion-webui-s3mod/repositories/generative-models'...
+#10 26.15 Cloning K-diffusion into /opt/stable-diffusion-webui-s3mod/repositories/k-diffusion...
+#10 26.16 Cloning into '/opt/stable-diffusion-webui-s3mod/repositories/k-diffusion'...
+#10 27.12 Cloning BLIP into /opt/stable-diffusion-webui-s3mod/repositories/BLIP...
+#10 27.13 Cloning into '/opt/stable-diffusion-webui-s3mod/repositories/BLIP'...
 #10 29.14 Installing requirements
 #10 120.3 Exiting because of --exit argument
 #10 121.8 WARNING: No ICDs were found. Either,
@@ -925,5 +946,5 @@
 #11 exporting layers
 #11 exporting layers 12.8s done
 #11 writing image sha256:da37dc1d62dd0edebdb6ed3e974cea41dc6131e8bac44aa8b7d8b9b0c05418c2 done
-#11 naming to ghcr.io/ai-dock/stable-diffusion-webui:newbase done
+#11 naming to ghcr.io/ai-dock/stable-diffusion-webui-s3mod:newbase done
 #11 DONE 12.8s
