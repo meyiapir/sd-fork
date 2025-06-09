@@ -65,7 +65,7 @@ function start() {
     FLAGS_COMBINED="${PLATFORM_FLAGS} ${BASE_FLAGS} $(cat /etc/a1111_webui_flags.conf)"
     printf "Starting %s...\n" "${SERVICE_NAME}"
     
-    cd /opt/stable-diffusion-webui &&
+    cd /opt/stable-diffusion-webui-s3mod &&
     exec micromamba run -n webui -e LD_PRELOAD=libtcmalloc.so python launch.py \
         ${FLAGS_COMBINED} --port ${LISTEN_PORT}
 }

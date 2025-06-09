@@ -3,12 +3,12 @@
 ARG IMAGE_BASE="ghcr.io/ai-dock/pytorch:2.1.1-py3.10-cuda-11.8.0-base-22.04"
 FROM ${IMAGE_BASE}
 
-LABEL org.opencontainers.image.source https://github.com/ai-dock/stable-diffusion-webui
+LABEL org.opencontainers.image.source https://github.com/ai-dock/stable-diffusion-webui-s3mod
 LABEL org.opencontainers.image.description "Automatic1111 Stable Diffusion Web UI"
 LABEL maintainer="Rob Ballantyne <rob@dynamedia.uk>"
 
-ENV IMAGE_SLUG="stable-diffusion-webui"
-ENV OPT_SYNC=stable-diffusion-webui
+ENV IMAGE_SLUG="stable-diffusion-webui-s3mod"
+ENV OPT_SYNC=stable-diffusion-webui-s3mod
 
 # Copy early so we can use scripts in the build - Changes to these files will invalidate the cache and cause a rebuild.
 COPY --chown=0:1111 ./COPY_ROOT/ /

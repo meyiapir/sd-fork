@@ -19,7 +19,7 @@ EXTENSIONS=(
     #"https://github.com/deforum-art/sd-webui-deforum"
     #"https://github.com/adieyal/sd-dynamic-prompts"
     #"https://github.com/ototadana/sd-face-editor"
-    #"https://github.com/AlUlkesh/stable-diffusion-webui-images-browser"
+    #"https://github.com/AlUlkesh/stable-diffusion-webui-s3mod-images-browser"
     #"https://github.com/hako-mikan/sd-webui-regional-prompter"
     #"https://github.com/Coyote-A/ultimate-upscale-for-automatic1111"
     #"https://github.com/fkunn1326/openpose-editor"
@@ -77,22 +77,22 @@ function build_extra_start() {
     build_extra_get_pip_packages
     build_extra_get_extensions
     build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/ckpt" \
+        "/opt/storage/stable-diffusion-webui-s3mod/models/ckpt" \
         "${CHECKPOINT_MODELS[@]}"
     build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/lora" \
+        "/opt/storage/stable-diffusion-webui-s3mod/models/lora" \
         "${LORA_MODELS[@]}"
     build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/controlnet" \
+        "/opt/storage/stable-diffusion-webui-s3mod/models/controlnet" \
         "${CONTROLNET_MODELS[@]}"
     build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/vae" \
+        "/opt/storage/stable-diffusion-webui-s3mod/models/vae" \
         "${VAE_MODELS[@]}"
     build_extra_get_models \
-        "/opt/storage/stable_diffusion/models/esrgan" \
+        "/opt/storage/stable-diffusion-webui-s3mod/models/esrgan" \
         "${ESRGAN_MODELS[@]}"
    
-    cd /opt/stable-diffusion-webui && \
+    cd /opt/stable-diffusion-webui-s3mod && \
         micromamba run -n webui -e LD_PRELOAD=libtcmalloc.so python launch.py \
         --use-cpu all \
         --skip-torch-cuda-test \
@@ -122,7 +122,7 @@ function build_extra_get_pip_packages() {
 function build_extra_get_extensions() {
     for repo in "${EXTENSIONS[@]}"; do
         dir="${repo##*/}"
-        path="/opt/stable-diffusion-webui/extensions/${dir}"
+        path="/opt/stable-diffusion-webui-s3mod/extensions/${dir}"
         requirements="${path}/requirements.txt"
         if [[ -d $path ]]; then
             if [[ ${AUTO_UPDATE,,} != "false" ]]; then
